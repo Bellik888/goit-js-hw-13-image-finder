@@ -3,9 +3,33 @@ import axios from "axios";
 const BASE_URL = 'https://pixabay.com/api/'
 const KEY = '23143199-b6bad35488b5353448d934ebd'
 
-function getImages(value) {
-    let page = 1;
-    return axios.get(`${BASE_URL}?key=${KEY}&q=${value}&image_type=photo&orientation=horizontal&page=${page}&per_page=12`);    
-}
 
-export default getImages ;
+export default class NewsApiService {
+    constructor(){
+        this.page = 1;
+        this.searchQuery = '';
+    }
+    
+    getImages(value){
+        return axios.get(`${BASE_URL}?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&page=${this.page}&per_page=12`)
+            .then(response => {
+                this.pageIncrement();
+                return response;
+            })
+            
+    }
+    pageIncrement() {
+            this.page += 1;
+    };
+    resetPage() {
+        this.page = 1;
+    }
+    
+    get query() {
+    return this.searchQuery;
+    };
+
+    set query(newQuery) {
+    this.searchQuery = newQuery;
+    };
+}

@@ -49,7 +49,7 @@ function scrollIntoView() {
     });
 }
 function resetGallery() {
-    refs.gallery.innerHTML = "";
+     refs.gallery.innerHTML = "";
 }
 function clearGallery() {
     refs.gallery.innerHTML = "";

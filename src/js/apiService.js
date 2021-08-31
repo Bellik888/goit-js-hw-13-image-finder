@@ -10,12 +10,13 @@ export default class NewsApiService {
         this.searchQuery = '';
     }
     
-    getImages(value){
-        return axios.get(`${BASE_URL}?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&page=${this.page}&per_page=12`)
+    getImages(){
+         return axios.get(`${BASE_URL}?key=${KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&page=${this.page}&per_page=12`)
             .then(response => {
                 this.pageIncrement();
                 return response;
             })
+        
             
     }
     pageIncrement() {

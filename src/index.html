@@ -17,12 +17,20 @@
     <div class="container">
       <form class=" search-form" id="search-form">
         <input type="text" id="input" name="query" autocomplete="off" placeholder="Search images..." />
-        
-        <button class="btn-grad search-btn">Search</button>
+        <div class="input-btn">
+          <button class="btn-grad search-btn" type="submit">Search</button>
+          <button class=" btn-grad clear-btn is-hidden">
+            <span class="material-icons">
+              update
+            </span>
+            RESET
+          </button>
+        </div>
       </form>
-      <button class=" btn-grad clear-btn">RESET</button>
+
+      
       <ul class="gallery lists" id="gallery"></ul>
-      <button class="btn-grad load-more">Load more</button>
+      <button class="btn-grad load-more is-hidden">Load more</button>
     
     </div>
     

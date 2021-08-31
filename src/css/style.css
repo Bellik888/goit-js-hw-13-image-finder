@@ -6,9 +6,13 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
 body {
   margin: 0;
-  background-image: url('../images/cool-background-1.png');
+  /* background-image: url('../images/cool-background-1.png'); */
+  background-image: url('../images/vintage-green.png');
+  background-attachment: fixed;
+  /* background-image: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(54, 253, 45, 1) 100%); */
 }
 .lists {
   padding: 0;
@@ -33,7 +37,6 @@ p {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
 }
 #input {
   display: block;
@@ -51,6 +54,7 @@ img {
 .btn-grad {
   margin: 10px;
   padding: 15px 45px;
+  font-size: 20px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -59,12 +63,21 @@ img {
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  cursor: pointer;
 }
 
 .btn-grad:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center;
   color: #fff;
   text-decoration: none;
+}
+
+.input-btn {
+  display: flex;
+  justify-content: center;
+}
+.load-more {
+  margin: 50px auto;
 }
 
 .gallery {
@@ -79,11 +92,42 @@ img {
   margin-top: 30px;
   margin-left: 15px;
   margin-right: 15px;
-  border: 1px solid tomato;
+}
+.photo-card {
   border-radius: 15px;
+  border: 2px tomato;
   overflow: hidden;
 }
-
 .photo-list--stats {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.623);
+}
+
+.photo {
+  height: 210px;
+}
+.photo-img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+
+  cursor: pointer;
+}
+.photo-list--stats {
+  display: flex;
+  justify-content: space-evenly;
+}
+.stats-item {
+  text-align: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.material-icons {
+  display: flex;
+  justify-content: center;
+}
+.is-hidden {
+  display: none;
 }

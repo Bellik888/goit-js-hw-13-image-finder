@@ -17,7 +17,7 @@ function onSearch(e) {
     newsApiService.resetPage();
     getInputQuery();
     scrollIntoView();
-    
+    setTimeout(() => visibleBtn(), 1000 );
 }
 function onLoadMore() {
     getInputQuery();
@@ -54,4 +54,8 @@ function resetGallery() {
 function clearGallery() {
     refs.gallery.innerHTML = "";
     refs.input.value = '';
+}
+function visibleBtn() {
+    refs.loadMoreBtn.classList.remove('is-hidden');
+    refs.clearBtn.classList.remove('is-hidden');
 }

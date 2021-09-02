@@ -20,13 +20,12 @@ function onSearch(e) {
     newsApiService.query = refs.input.value;
     newsApiService.resetPage();
     getInputQuery();
-    scrollIntoView();
     setTimeout(() => visibleBtn(), 1000);
 }
 function onLoadMore() {
     getInputQuery();
+    scrollIntoView()
 }
-
 function getInputQuery() {
     newsApiService.getImages()
             .then(response => {
@@ -45,13 +44,15 @@ function cardUpdate(response) {
 
 
 function scrollIntoView() {
-    const gallery = document.getElementById('gallery');
-
-    gallery.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-    });
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 500);
 }
+
 function resetGallery() {
      refs.gallery.innerHTML = "";
 }

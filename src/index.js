@@ -45,11 +45,10 @@ function cardUpdate(response) {
 
 function scrollIntoView() {
     setTimeout(() => {
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        left: 0,
-        behavior: "smooth",
-      });
+        refs.body.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end',
+        });
     }, 500);
 }
 

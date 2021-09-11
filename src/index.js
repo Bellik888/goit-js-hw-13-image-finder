@@ -65,6 +65,9 @@ function visibleBtn() {
 }
 
 function onOpenModal(e) {
+    if (!e.target.dataset.source) {
+        return;
+    }
     const image = e.target.dataset.source;
     const instance = basicLightbox.create(`<img src="${image}">`);
     instance.show()

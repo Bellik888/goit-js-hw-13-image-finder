@@ -12,6 +12,11 @@ refs.gallery.addEventListener('click', onOpenModal);
 
 const newsApiService = new NewsApiService;
 
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+}
 
 
 function onSearch(e) {
@@ -24,8 +29,15 @@ function onSearch(e) {
 }
 function onLoadMore() {
     getInputQuery();
-    scrollIntoView()
+    newsApiService.page += 1;
+    // scrollIntoView()
+    if (newsApiService.page === 2) {
+        const observer = new IntersectionObserver(onLoadMore, options);
+        observer.observe(refs.loadMoreBtn);
+    }
+    console.log(newsApiService.page);
 }
+
 function getInputQuery() {
     newsApiService.getImages()
             .then(response => {
